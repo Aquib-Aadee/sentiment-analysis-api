@@ -13,6 +13,11 @@ app = FastAPI(
 class TextRequest(BaseModel):
     text: str
 
+    # Create a welcome message for the root URL
+@app.get("/")
+def welcome():
+    return {"message": "Welcome to the Sentiment Analysis API! Please add '/docs' to the URL to interact with the model."}
+
 # Create the endpoint (the URL path where users will send their text)
 @app.post("/predict")
 def predict_sentiment(request: TextRequest):
