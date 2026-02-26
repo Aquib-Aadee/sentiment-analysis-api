@@ -15,6 +15,9 @@ The objective is to expose a text-analysis model via an API endpoint that evalua
 * **NLP Library:** `TextBlob`
 * **Architecture:** Microservice design separating the NLP logic (`src/analyzer.py`) from the routing and server configuration (`main.py`).
 
+## CI/CD & Deployment
+This API is actively deployed on a cloud environment. It utilizes a Continuous Deployment (CD) pipeline integrated directly with GitHub. Any commits pushed to the `main` branch automatically trigger a server rebuild and dependency installation on **Render**, ensuring the live endpoint is always running the latest model architecture.
+
 ## Future Work & Limitations
 To advance this service, future iterations will explore:
 * Upgrading the lexicon-based model to a transformer-based architecture (e.g., **BERT**) for deeper contextual understanding.
